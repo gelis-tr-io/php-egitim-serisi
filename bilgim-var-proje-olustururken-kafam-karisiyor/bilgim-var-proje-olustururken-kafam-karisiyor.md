@@ -149,6 +149,7 @@ function kisaltici($icerik,$karakter) {
  
  https://projeyolu/kayıtol dediğimde artık karşıma hazırladığım kayıtol sayfası çıkacak 
  
+ ### Edit: PHP üzerine anlattım ama tüm diller üzerinden benzer yapılar oluşturulabilir. Lütfen referans olarak okuyun.
 
   ## Okuyup anlama algoritması:
    1 - Eğer okuyup anladıysan mükemmel! Otur ve bolca kod yaz!
@@ -160,4 +161,4 @@ function kisaltici($icerik,$karakter) {
    
    Faydalı Olması Ümidiyle...
  
-  
+    
