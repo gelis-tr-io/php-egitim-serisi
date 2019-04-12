@@ -1,13 +1,14 @@
-# Birçok Şey Öğrendim Ama Web Sitesi Oluşturamıyorum Kafam Çok Karışık!.
+# Birçok şey öğrendim ama web sitesi oluşturamıyorum kafam çok karışık!
+
 Bu ifade şuanda olduğun durumu özetliyorsa muhtemel sıkıntın belirli bir dosya düzenine sahip olmaman veya bir yazılımı oluşturacak dosya düzenini kafanda kurgulayamamandan kaynaklanıyor olabilir. Zamanında benimde yaşadığım bu durumu çevremdeki bir kaç arkadaşımda da gözlemlemiştim. Genel olarak tek sayfalı yapılar oluşturabiliyor ama mesele birden fazla sayfanın birbirleriyle olan ilişkisine gelince insanın kafası karışabiliyor böyle bi durumda birşeyleri yavaş yavaş öğrenmene rağmen programlama olayı eziyet haline gelebilir.
 
-Şimdi göstereceğim dosya yapısı oldukça basit. Küçük ve orta ölçekli projeler için biçilmiş kaftan biraz revize edilerek büyük ölçekli projelerde de kullanılabilir güzel bir yapı. Seveceksiniz..
+Şimdi göstereceğim dosya yapısı oldukça basit. Küçük ve orta ölçekli projeler için biçilmiş kaftan biraz revize edilerek büyük ölçekli projelerde de kullanılabilir güzel bir yapı. Seveceksiniz...
 
 ### Bu dosya sistemi nelerden oluşuyor?
   1. Asset Klasörü / Alt klasörler ise aşağıdaki gibi
   
-    - Css Klasörü / Tüm Css'leri barındırdığımız klasör 
-    - Js Klasörü /  Tüm Js'leri barındırdığımız klasör
+    - CSS Klasörü / Tüm CSS dosyalarını barındırdığımız klasör 
+    - JS Klasörü /  Tüm JS dosyalarını barındırdığımız klasör
     - Font Klasörü / Tüm fontları barındırdığımız klasör 
     - Image Klasörü / Tüm imageleri barındırdığımız klasör
     
@@ -23,22 +24,26 @@ Bu ifade şuanda olduğun durumu özetliyorsa muhtemel sıkıntın belirli bir d
       - header.php
       - footer.php
     
-  5. Index.php / Ana dizinde olmalı herşeyin döndüğü sayfa olacak.
+  5. index.php / Ana dizinde olmalı herşeyin döndüğü sayfa olacak.
   
   6. .htaccess / Yönlendirmelerimizi sağlayacak 
   
   ### Şimdi nasıl görünüyor bir bakalım.
  
  Benim wall adında bir projem vardı onun üzünden göstereyim
- Genel  Görünüm : 
- ![Genel Görünüm](gorunum1.png) 
- Alt dosyalar ve klasörlerle beraber :
+ 
+Genel  Görünüm:
+ 
+ ![Genel Görünüm](gorunum1.png)
+
+ Alt dosyalar ve klasörlerle beraber:
+
  ![Alt dosyalarla beraber](gorunum2.png) 
  
  
  ## Bu sistem nasıl çalışır?
  
-  Aslında herşey ana dizindeki index dosyamızda kullanıcıya döndürülüyor. Bu indexte işlemler şu şekilde
+  Aslında herşey ana dizindeki index dosyamızda kullanıcıya döndürülüyor. Bu indexte işlemler şu şekilde:
  ```php
  <?php
 require 'conf/conf_main.php'; // Veritabanı bağlantılarımızın ve proje dahilinde kullanılabilecek fonksiyonları barındıran dosyamızı çektik bu sayede her yerde tekrar tekrar bağlantı kurmamıza gerek yok
@@ -56,15 +61,16 @@ if(isset($_GET['__path'])){ // Path kontrolü proje yolundan sonra yol belirlenm
 }
 ```
 
-Ve tabiki .htaccess olmazsa olmaz. Bu gördüğünüz kodda '__path'in ne olduğunu tanımlıyoruz aslında. index.php'ye bağlık get ile gönderilen değerler olarak görüyor __path'i  
+Ve tabi ki .htaccess olmazsa olmaz. Bu gördüğünüz kodda '__path'in ne olduğunu tanımlıyoruz aslında. index.php'ye bağlı get ile gönderilen değerler olarak görüyor __path'
+
 ```.htaccess
   RewriteEngine On
   RewriteRule ^([0-9a-zA-Z-_/]+)$ index.php?__path=$1 [QSA]
 
 ```
 
-  ## Adım adım bir kayıtol sayfası oluşturalım.
-  Dosya yapım hazır herşey olması gerektiği yer ve yazmaya hazırız.
+  ## Adım adım bir kayıt ol sayfası oluşturalım.
+  Dosya yapımız hazır, herşey olması gerektiği yerde ve yazmaya hazırız.
   
   ### conf klasöründeki conf_main.php'yi hazırlayalım. 
   ```php
@@ -104,7 +110,7 @@ function kisaltici($icerik,$karakter) {
 <body>
 
  ```
-  ### constants klasörümün footer.php kısmı
+  ### Constants klasörümün footer.php kısmı
  ```php
  
  <script src="asset/js/bootstrap.min.js"></script> // Js'mi projeye dahil ettim. Js dosyalarınızı münkün olduğunca footer'a koyun sayfa hızını artıracaktır.
@@ -113,7 +119,7 @@ function kisaltici($icerik,$karakter) {
 </html>
  
  ```
-  ### Templates klasörüne bir kayıtol.php oluşturalım içeriği şu şekilde
+  ### Templates klasörüne bir kayıtol.php oluşturalım, içeriği şu şekilde:
   
   ```php
 <?php require 'controller/kayitol.php'; ?> // Birazdan controller dosyasında oluşturacağım kayitol.php dosyamı sayfaya dahil ettim
@@ -131,7 +137,7 @@ function kisaltici($icerik,$karakter) {
  
  ```
   
-  ## Contoller içindeki kayıtol.php dosyam
+  ## Contoller içindeki kayıtol.php dosyam:
    ```php
    if(isset($_POST['kayitol'])){
     
@@ -139,26 +145,27 @@ function kisaltici($icerik,$karakter) {
    }
  
  ```
- ## Kayıtol'u yaparken yaptıklamızı özetlemek gerekirse
+ ## Kayıtol'u yaparken yaptıklarımızı özetlemek gerekirse
    - Öncelikle dosya yapısının her yerinde aktif olması için config dosyama veritabanı bağlantımı yazdım.
-   - Header ve footer.php lerimi tek bir defa yazarak grektiği duruda oluşturduğum sayfalara require ile içeri çektim. 
-   - Ardından kullanıcılara formu göstermek için templates içine kayitol.php adında bir dosya oluşturdum ve html vs şeyleri oraya yazdım
+   - Header ve footer.php dosyalarımı tek bir defa yazarak gerektiği durumda oluşturduğum sayfalara require ile içeri çektim. 
+   - Ardından kullanıcılara formu göstermek için templates içine kayitol.php adında bir dosya oluşturdum ve html vs. şeyleri oraya yazdım
    - Ardından controller klasörümün içine kayıtol.php oluşturarak php ile alakalı kontrollerimi ve veritabanı işlemlerimi yaptım tabii bu dosyamı require ile templates/kayıtol.php'nin içine çektim.
  
- Bu şekilde  karmaşıklığı ortadan kaldırım bazı noktalarda kodumu tek sefer yazdım ve artık yeni sayfa oluşturmak istediğimde controller ve templates klasörlerime ilgili sayfann dosyalarını oluşturmam yeterli
+ Bu şekilde  karmaşıklığı ortadan kaldırdım, bazı noktalarda kodumu tek sefer yazdım ve artık yeni sayfa oluşturmak istediğimde controller ve templates klasörlerime ilgili sayfanın dosyalarını oluşturmam yeterli olacak.
  
  https://projeyolu/kayıtol dediğimde artık karşıma hazırladığım kayıtol sayfası çıkacak 
  
  ### Edit: PHP üzerine anlattım ama tüm diller üzerinden benzer yapılar oluşturulabilir. Lütfen referans olarak okuyun.
 
-  ## Okuyup anlama algoritması:
-   1 - Eğer okuyup anladıysan mükemmel! Otur ve bolca kod yaz!
-   2 - Eğer anlamadıysan lütfen tekrar gözden geçir.
-   3 - Tekrar gözden geçirdiğinde anladın mı? Süper 1. Adımı uygula
-   4 - Tekrar gözden geçirmene rağmen anlamadın mı? Lütfen kahveni iç kafanı dinle ve tekrar oku.
-   5 - Eğer anladıysan 1. Adımı uygula Anlamadıysan 6. adımı uygula
-   6 - 3. Tekrardan sonra hala anlamadıysan problem benden kaynaklanıyordur lütfen benimle iletişime geç
+## Okuyup anlama algoritması:
+
+1. Eğer okuyup anladıysan mükemmel! Otur ve bolca kod yaz!
+2. Eğer anlamadıysan lütfen tekrar gözden geçir.
+3. Tekrar gözden geçirdiğinde anladın mı? Süper 1. Adımı uygula.
+4. Tekrar gözden geçirmene rağmen anlamadın mı? Lütfen kahveni iç kafanı dinle ve tekrar oku.
+5. Eğer anladıysan 1. Adımı uygula Anlamadıysan 6. adımı uygula.
+6. Üçüncü tekrardan sonra hala anlamadıysan problem benden kaynaklanıyordur, lütfen benimle iletişime geç.
    
-   Faydalı Olması Ümidiyle...
+Faydalı olması ümidiyle...
  
     
