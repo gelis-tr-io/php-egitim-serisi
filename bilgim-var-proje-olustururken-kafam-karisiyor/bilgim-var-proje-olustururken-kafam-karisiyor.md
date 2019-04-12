@@ -151,12 +151,12 @@ function kisaltici($icerik,$karakter) {
  
 
   ## Okuyup anlama algoritması:
-   1- Eğer okuyup anladıysan mükemmel! Otur ve bolca kod yaz!
-   2- Eğer anlamadıysan lütfen tekrar gözden geçir.
-   3- Tekrar gözden geçirdiğinde anladın mı? Süper 1. Adımı uygula
-   4- Tekrar gözden geçirmene rağmen anlamadın mı? Lütfen kahveni iç kafanı dinle ve tekrar oku.
-   5- Eğer anladıysan 1. Adımı uygula Anlamadıysan 6. adımı uygula
-   6- 3. Tekrardan sonra hala anlamadıysan problem benden kaynaklanıyordur lütfen benimle iletişime geç
+   1 - Eğer okuyup anladıysan mükemmel! Otur ve bolca kod yaz!
+   2 - Eğer anlamadıysan lütfen tekrar gözden geçir.
+   3 - Tekrar gözden geçirdiğinde anladın mı? Süper 1. Adımı uygula
+   4 - Tekrar gözden geçirmene rağmen anlamadın mı? Lütfen kahveni iç kafanı dinle ve tekrar oku.
+   5 - Eğer anladıysan 1. Adımı uygula Anlamadıysan 6. adımı uygula
+   6 - 3. Tekrardan sonra hala anlamadıysan problem benden kaynaklanıyordur lütfen benimle iletişime geç
    
    Faydalı Olması Ümidiyle...
  
