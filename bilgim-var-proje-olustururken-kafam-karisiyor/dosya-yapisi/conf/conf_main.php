@@ -13,6 +13,8 @@ try {
 
 $URL = "http://localhost/projeyolu";
 
+// path - proje yolu - dosya işlemleri için kök dizin
+$PATH = dirname(__DIR__);
 
 
 
