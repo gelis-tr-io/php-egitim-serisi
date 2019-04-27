@@ -11,7 +11,8 @@ try {
     print $e->getMessage();
 }
 
-$URL = "http://localhost/projeyolu";
+// url yolu server değişkeninden otomatik yorumlanıyor
+$URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
 // path - proje yolu - dosya işlemleri için kök dizin
 $PATH = dirname(__DIR__);
