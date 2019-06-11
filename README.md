@@ -8,3 +8,5 @@ Burada hem php eğitim serisi oluşturacağız hem de yeni öğrenenlerle berabe
 
 - [XSS Açıkları ve XSS Açıklarından Korunmak](xss-aciklari-ve-xss-aciklarindan-korunmak/xss-aciklari-ve-xss-aciklarindan-korunmak.md) - @hurata
 
+- [PHP Dosya İşlemleri](php-dosya-islemleri/php-dosya-islemleri.md) - @hurata
+
